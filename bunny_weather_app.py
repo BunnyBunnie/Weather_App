@@ -1,4 +1,4 @@
-import os
+import kivy
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
@@ -12,8 +12,8 @@ from kivy.core.window import Window
 from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
 
 # --- mobile experience ---
-if platform != "android" and platform != "ios":
-    Window.size = (400, 700)
+#if platform != "android" and platform != "ios":
+#    Window.size = (400, 700)
 
 
 class bunny_weather_app(App):
