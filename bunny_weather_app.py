@@ -1,15 +1,15 @@
 import os
-from bunny_weather_app import App
-from bunny_weather_app.layout import BoxLayout
-from bunny_weather_app.uix.textinput import TextInput
-from bunny_weather_app.uix.button import Button
-from bunny_weather_app.uix.label import Label
-from bunny_weather_app.uix.view import ScrollView
-from bunny_weather_app.uix.layout import GridLayout
-from bunny_weather_app.network.request import UrlRequest
-from bunny_weather_app.utils import platform
-from bunny_weather_app.core.window import Window
-from bunny_weather_app.uix.tabpanel import TabbedPanel, TabbedPanelItem
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.scrollview import ScrollView
+from kivy.uix.gridlayout import GridLayout
+from kivy.network.urlrequest import UrlRequest
+from kivy.utils import platform
+from kivy.core.window import Window
+from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
 
 # --- mobile experience ---
 if platform != "android" and platform != "ios":
