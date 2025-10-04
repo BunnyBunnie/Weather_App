@@ -1,25 +1,24 @@
 import os
-from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-from kivy.uix.scrollview import ScrollView
-from kivy.uix.gridlayout import GridLayout
-from kivy.network.urlrequest import UrlRequest
-from kivy.utils import platform
-from kivy.core.window import Window
-from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
-import json
+from bunny_weather_app import App
+from bunny_weather_app.layout import BoxLayout
+from bunny_weather_app.uix.textinput import TextInput
+from bunny_weather_app.uix.button import Button
+from bunny_weather_app.uix.label import Label
+from bunny_weather_app.uix.view import ScrollView
+from bunny_weather_app.uix.layout import GridLayout
+from bunny_weather_app.network.request import UrlRequest
+from bunny_weather_app.utils import platform
+from bunny_weather_app.core.window import Window
+from bunny_weather_app.uix.tabpanel import TabbedPanel, TabbedPanelItem
 
-# --- For a better mobile experience ---
+# --- mobile experience ---
 if platform != "android" and platform != "ios":
     Window.size = (400, 700)
 
 
-class WeatherApp(App):
+class bunny_weather_app(App):
     """
-    The main class for the Kivy Weather App.
+    The main class for the Bunny Weather App.
     It handles UI creation, API requests, and user interactions.
     """
 
@@ -27,9 +26,7 @@ class WeatherApp(App):
         """
         Build the user interface for the application with a TabbedPanel.
         """
-        # --- API Key ---
 
-        self.api_key = os.environ.get("OPENWEATHER_API_KEY", "YOUR_API_KEY_HERE")
 
         # --- Main Layout: Tabbed Panel ---
         self.root = TabbedPanel(do_default_tab=False)
@@ -63,7 +60,7 @@ class WeatherApp(App):
             text="Enter a city to see the weather.",
             font_size=24,
             color=(0.1, 0.1, 0.1, 1),
-            halign="center",
+            align="center",
             valign="middle",
         )
         weather_layout.add_widget(self.weather_label)
@@ -129,7 +126,7 @@ class WeatherApp(App):
             text=Settings_text,
             font_size=18,
             color=(0.1, 0.1, 0.1, 1),
-            halign="center",
+            align="center",
             valign="middle",
             padding=(20, 20),
             markup=True,
@@ -216,7 +213,7 @@ class WeatherApp(App):
 
         # Add a background to the report label
         with report_widget.canvas.before:
-            from kivy.graphics import Color, RoundedRectangle
+            from bunny_weather_app import Color, RoundedRectangle
 
             Color(0.85, 0.85, 0.9, 1)  # A light grey-blue
             RoundedRectangle(
@@ -246,11 +243,11 @@ class WeatherApp(App):
         """
         instance.canvas.before.clear()
         with instance.canvas.before:
-            from kivy.graphics import Color, RoundedRectangle
+            from bunny_weather_app.graphics import Color, RoundedRectangle
 
             Color(0.85, 0.85, 0.9, 1)
             RoundedRectangle(pos=instance.pos, size=instance.size, radius=[10])
 
 
 if __name__ == "__main__":
-    BunnyWeatherApp().run()
+    bunny_weather_app().run()
