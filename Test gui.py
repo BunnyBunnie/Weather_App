@@ -8,7 +8,7 @@ Window.size = (350, 600)
 
 kv = """
 MDScreen:
-    md_bg_color: 0.9, 0.9, 1, 1 # Light blue/purple background like mockup
+    md_bg_color: 0.9, 0.9, 1, 1 # Light blue background
 
     MDBottomNavigation:
         # Tab 1: Home
@@ -39,7 +39,7 @@ MDScreen:
                     Image:
                         # Using 'partly-cloudy.png' as a placeholder for the sun icon
                         # This file was in your new upload list.
-                        source: 'partly-cloudy.png'
+                        source: '.png'
                         size_hint_y: .4
 
                     MDLabel:
