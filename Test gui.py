@@ -1,6 +1,7 @@
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
+
 # pyright: ignore[reportMissingImports]
 
 # Set the window size
@@ -37,9 +38,7 @@ MDScreen:
                         bold: True
 
                     Image:
-                        # Using 'partly-cloudy.png' as a placeholder for the sun icon
-                        # This file was in your new upload list.
-                        source: '.png'
+                        source: 'sunny.png'
                         size_hint_y: .4
 
                     MDLabel:
@@ -106,7 +105,7 @@ MDScreen:
                         sync_height: True
 
                     MDRaisedButton:
-                        text: "Submit! (Ty!! ✨)"
+                        text: "Submit! (✨Ty!!!✨)"
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (0.2, 0.8, 0.2, 1) # Greenish color
                         on_release: app.submit_report()
