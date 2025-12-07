@@ -1,7 +1,8 @@
 # part of the core python gui library
 # not importing all of tkinter to save memory and improve performance
 import tkinter as tk
-from tkinter import ttk
+# ttkbootstrap is a modern themed extension of tkinter's ttk module
+import ttkbootstrap as ttk 
 
 # Window setup
 root = tk.Tk()
@@ -22,6 +23,8 @@ tab_control.add(tab1, text = "Home")
 # Tab Your Report's
 tab2 = ttk.Frame(tab_control)
 tab_control.add(tab2, text = "Report Weather")
+button2 = ttk.Button(tab2, text="Submit Report")
+button2.pack()
 
 # Tab Report Weather
 tab3 = ttk.Frame(tab_control)
