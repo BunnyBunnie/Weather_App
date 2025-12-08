@@ -1,19 +1,19 @@
 # part of the core python gui library
 # not importing all of tkinter to save memory and improve performance
 import tkinter as tk
-# ttkbootstrap is a modern themed extension of tkinter's ttk module
-import ttkbootstrap as ttk 
+import ttkbootstrap as ttk
 
 # Window setup
-root = tk.Tk()
+window = tkk.window(themename ='darkly')
+
 
 # Setting window size and title
-root.geometry("360x600")
-root.title("Bunny Weather App V.3")
+window.geometry("360x600")
+window.title("Bunny Weather App V.3")
 
 # widget setup
 # Creating tab control
-tab_control = ttk.Notebook(root)
+tab_control = ttk.Notebook(window)
 
 # Creating tabs 5 in total
 # Tab Home
@@ -42,4 +42,4 @@ tab_control.add(tab5, text= "About")
 tab_control.pack()
 
 # run the application
-root.mainloop()
+window.mainloop()
