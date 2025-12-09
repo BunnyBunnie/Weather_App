@@ -235,7 +235,7 @@ def load_weather(location=DEFAULT_LOCATION):
 
 
 # ------------------Window setup------------------
-# THIS WAS THE LINE CAUSING THE ERROR:
+# THIS WAS THE LINE CAUSING THE ERROR: FIXED! I did not have ctk capatalized after the ctk. for the window. 
 app = ctk.CTk()
 
 app.geometry("360x650")
@@ -250,10 +250,15 @@ tab_view.pack(expand=True, fill="both")
 tab_view.add("Home")
 home_tab = tab_view.tab("Home")
 
-input_frame = ctk.CTkFrame(home_tab, fg_color="transparent")
+# tab frame
+input_frame = ctk.CTkFrame(home_tab)
 input_frame.pack(pady=(10, 5))
+
+# Allows the person to enter their zipcode for accurate weather. 
 zip_entry = ctk.CTkEntry(input_frame, placeholder_text="Enter Zip Code", width=140)
 zip_entry.pack(side="left", padx=5)
+
+# Search Button
 search_btn = ctk.CTkButton(
     input_frame, text="Search", width=60, command=search_location
 )
@@ -264,9 +269,11 @@ header_label = ctk.CTkLabel(
 )
 header_label.pack(pady=10)
 
+# The 24 hr weather scroll. 
 weather_scroll_frame = ctk.CTkScrollableFrame(home_tab, label_text="24-Hour Forecast")
 weather_scroll_frame.pack(expand=True, fill="both", padx=10, pady=5)
 
+# Refresh button
 refresh_btn = ctk.CTkButton(home_tab, text="Refresh Weather", command=search_location)
 refresh_btn.pack(pady=5)
 
@@ -274,14 +281,20 @@ submit_button_home = ctk.CTkButton(
     home_tab,
     text="Not the Correct Weather? \n Click Here!",
     corner_radius=20,
+    
+    # Button Color
     fg_color="#FF334B",
+    # Hover Color
     hover_color="#C70039",
+    # Goes to the Report Weather Tab
     command=switch_to_report,
 )
 submit_button_home.pack(side="bottom", pady=10)
 
 
 # --- REPORT WEATHER TAB ---
+
+# Report Weather Tab
 tab_view.add("Report Weather")
 report_tab = tab_view.tab("Report Weather")
 ctk.CTkLabel(
