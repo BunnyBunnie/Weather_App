@@ -13,8 +13,8 @@ DEFAULT_LOCATION = "60601"
 current_unit = "F"
 saved_reports = []  # List to store reports in memory
 
-# ------------------ Functions ------------------
 
+# ------------------ Functions ------------------
 
 def show_about():
     messagebox.showinfo(
